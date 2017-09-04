@@ -5,7 +5,8 @@ Feature: Adding an item to grocery-list
   Scenario: Adding an item to a grocery list
     Given that I have a grocery list
     When I add an item to the list
-    Then I should have an item added to the grocery list.
+    And that item has a name
+    Then that item should be added to the grocery list.
 
   Scenario: Adding an item to a grocery list that's already in the list and unbought
     Given that I have a grocery list with at least 1 unbought item
