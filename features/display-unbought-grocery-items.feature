@@ -10,4 +10,4 @@ Feature: Displaying which grocery items have not been bought yet
   Scenario: Unsuccessfully displaying unbought grocery items
     Given that I have no unbought grocery items in my grocery list
     When I click the display-unbought-items button
-    Then a message is shown stating that therer are no unbought grocery items to display
+    Then a message is shown stating that there are no unbought grocery items to display
