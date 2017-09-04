@@ -2,13 +2,6 @@ Feature: Creating an grocery list item
   As a user
   I should be able to create and set the name, category and quantity of an item
 
-  Scenario: Failing to create an item with no category
-    Given that I have entered a name for a new item
-    And I have not entered a category for that item
-    When I try to create an item with that info
-    Then no item should be created
-    And I should be notified that a category is needed to be supplied as well
-
   Scenario: Failing to create an item with no name
     Given that I have not entered a name for a new item
     When I try to create an item with that info
