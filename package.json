@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js & exit 0"
+    "test": "cucumber-js & exit 0",
+    "dennis": "cucumber-js features/grocery-list-item.feature & exit 0"
   },
   "author": "",
   "license": "ISC",
