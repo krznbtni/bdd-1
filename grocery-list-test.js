@@ -4,8 +4,6 @@ let assert = require('assert');
 // Import the GroceryList class
 let GroceryList = require('./grocery-list');
 
-// Collect all tests I want to do with
-// the GroceryList class in a new class
 module.exports = class GroceryListTest {
 
   constructor(){
