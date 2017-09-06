@@ -9,6 +9,7 @@ module.exports = class GroceryListItem {
     this._name = name;
     this._category = category;
     this._quantity = quantity;
+    this.bought = false;
   }
 
   get name(){ return this._name; }
