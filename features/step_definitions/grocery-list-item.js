@@ -56,7 +56,9 @@ defineSupportCode(function({Given, When, Then}) {
     this.item = undefined;
     for (let data of this.testData) {
       if (this.item !== undefined) { return; }
-      this.item = new GroceryListItem(data.n, data.c, data.q);
+      try {
+        this.item = new GroceryListItem(data.n, data.c, data.q);
+      } catch(e){};
     }
   });
 
@@ -94,14 +96,16 @@ defineSupportCode(function({Given, When, Then}) {
 
 
   When('I try to set the {string} of the item to that', function (string) {
-    assert(string == 'name' || string == 'category' || string == 'quality',
+    assert(string == 'name' || string == 'category' || string == 'quantity',
       'scenario has been changed, update the test-code!');
 
     this.item = new GroceryListItem(randomValidName);
 
     for (let data of this.testData) {
       let firstLetter = string[0]; // ex: quantity = q
-      this.item[string] = data[firstLetter]; // ex: this.item.name = data.n
+      try {
+        this.item[string] = data[firstLetter]; // ex: this.item.name = data.n
+      } catch(e) {};
     }
   });
 
