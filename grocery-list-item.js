@@ -26,7 +26,7 @@ module.exports = class GroceryListItem {
   }
   set quantity(quantity){
     assert(typeof quantity == 'number' && quantity >= 1, 'Tried to set an item\'s quantity to an invalid value');
-    this._name = quantity;
+    this._quantity = quantity;
   }
 
 }
