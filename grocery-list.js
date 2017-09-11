@@ -32,4 +32,8 @@ module.exports = class GroceryList {
     return this.items.filter(i=>!i.bought);
   }
 
+  removeFromList(){
+
+  }
+
 }
