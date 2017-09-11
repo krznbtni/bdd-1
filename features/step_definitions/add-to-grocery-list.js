@@ -29,21 +29,20 @@ defineSupportCode(function({Given, When, Then}) {
       this.list.addToList(randomValidName+i); // hello0, hello1, hello2 etc
     }
 
-    assert(this.list.unboughtItems.length >= int, 'failed to add '+int+' items to the list.')
+    assert(this.list.unboughtItems().length >= int, 'failed to add '+int+' items to the list.')
   });
 
   When('I add an item to the list that matches an unbought item in the list', function () {
-    if(int < 1) { return; }
+    if(this.int < 1) { return; }
 
     let unbought = this.list.unboughtItems();
     let randomIndex = Math.floor(Math.random() * unbought.length);
 
     this.randomUnboughtItem = unbought[randomIndex];
-    this.oldQuantity = randomUnboughtItem.quantity;
+    this.oldQuantity = this.randomUnboughtItem.quantity;
     this.randomishQuantity = 3;
 
     this.list.addToList(this.randomUnboughtItem.name, this.randomUnboughtItem.category, this.randomishQuantity);
-
   });
 
   Then('I should increment the quantity of that item in the grocery list.', function () {
