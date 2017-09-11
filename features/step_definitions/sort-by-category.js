@@ -17,13 +17,13 @@ defineSupportCode(function({
 
   // Scenario: Sort grocery-list by ascending category
   Given('that there is an existing grocery-list', function() {
-    this.list = new GroceryList('lista');
+    this.list = new GroceryList('fruits');
   });
 
   Given('that grocery-list has more then zero items', function() {
-    this.list.addToList('banan');
-    this.list.addToList('apelsin');
-    this.list.addToList('gurka');
+    this.list.addToList('banana');
+    this.list.addToList('orange');
+    this.list.addToList('paer');
   });
 
   Given('it\'s not already sorted by ascending category', function() {
@@ -46,12 +46,33 @@ defineSupportCode(function({
     }
   });
 
-  When('I click the sorting link/button for category', function() {
-    this.sortByCategory();
+  When('I click the sorting button for category', function() {
+    this.list.sortByCategory();
   });
 
-  Then('the list should be sorted by ascending category', function() {
-    assert.deepEqual(this.list.items, this.list.items.sort(), 'Items not sorted!');
+  Then('the list should be sorted by ascending category.', function() {
+    assert.deepEqual(this.list.items, this.list.items.sort((a, b) => {
+      return a.category < b.category
+    }), 'Items not sorted ascending!');
   });
 
+  // Scenario: Sort grocery-list by descending category
+  Given('it\'s sorted by ascending category', function() {
+    this.list.items.sort((a, b) => {
+      return a.category > b.category
+    });
+  });
+
+  Then('the list should be sorted by descending category.', function() {
+    assert.deepEqual(this.list.items, this.list.items.slice().reverse(), 'Items not sorted descending!');
+  });
+
+  // Scenario: Sort an empty grocery-list
+  Given('that grocery-list has zero items', function() {
+    this.list.items = [];
+  });
+
+  Then('nothing should happen.', function() {
+    assert.doesNotThrow(sortByCategory(), 'Error trying to sort an empty list items array');
+  });
 });
