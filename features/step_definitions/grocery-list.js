@@ -4,11 +4,6 @@ let GroceryList = require('../../grocery-list.js');
 let GroceryListItem = require('../../grocery-list-item.js');
 
 defineSupportCode(function({Given, When, Then}) {
-
-  // given = förberedelser
-  // when = utför koden. nånting händer.
-  // then = blev resultatet av When det vi förväntar oss ska hända
-
   let usedListNames = [
     "list-name-1",
     "list-name-2",
@@ -28,7 +23,7 @@ defineSupportCode(function({Given, When, Then}) {
 
   Given('that I fill in a valid name for a new grocery list that has already been used', function () {
     //include tittar ifall den finns i listan. default är true.
-    assert(usedListNames.includes(this.name), 'this name is already in the list');
+    assert(usedListNames.includes(this.name), 'this name is already used');
   });
 
   When('I click the create button', function () {
