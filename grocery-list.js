@@ -15,4 +15,8 @@ module.exports = class GroceryList {
   unboughtItems(){
   }
 
+  sortByCategory(){
+    
+  }
+
 }

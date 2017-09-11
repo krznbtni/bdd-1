@@ -6,6 +6,7 @@
   "scripts": {
     "test": "cucumber-js & exit 0",
     "dennis": "cucumber-js features/grocery-list-item.feature & exit 0",
+    "martin": "cucumber-js features/sort-by-category.feature & exit 0",
     "karzan": "cucumber-js features/grocery-list.feature & exit 0"
   },
   "author": "",
