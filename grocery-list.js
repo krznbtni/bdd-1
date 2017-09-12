@@ -6,41 +6,41 @@ module.exports = class GroceryList {
     this.name = name;
     this.items = [];
 
-    //gör den statisk
-    GroceryList.existingLists = GroceryList.existingLists || [];
-
-    if (name == 'string'){
-      GroceryList.existingLists.push(name);
-    } else {
-      throw new Error ('List name is not a string!');
-    }
-
-    if (name != ''){
-      GroceryList.existingLists.push(name);
-    } else {
-      throw new Error ('List name is empty!');
-    }
-
-    if (GroceryList.existingLists.includes(name) === false){
-      GroceryList.existingLists.push(name);
-    } else {
-      throw new Error ('List name already exists!');
-    }
+    // //gör den statisk
+    // GroceryList.existingLists = GroceryList.existingLists || [];
+    //
+    // if (name == 'string'){
+    //   GroceryList.existingLists.push(name);
+    // } else {
+    //   throw new Error ('List name is not a string!');
+    // }
+    //
+    // if (name != ''){
+    //   GroceryList.existingLists.push(name);
+    // } else {
+    //   throw new Error ('List name is empty!');
+    // }
+    //
+    // if (GroceryList.existingLists.includes(name) === false){
+    //   GroceryList.existingLists.push(name);
+    // } else {
+    //   throw new Error ('List name already exists!');
+    // }
   }
 
   addToList(name, category, quantity){
-    let newItem = new GroceryListItem(name, category, quantity);
-
-    let existingSameItem = this.items.find((i)=>{
-      let sameOrNoCategory = !newItem.category || i.category == i.category;
-      return sameOrNoCategory && !i.bought && i.name == newItem.name;
-    });
-
-    if (existingSameItem){
-      existingSameItem.quantity += newItem.quantity;
-    } else {
-      this.items.push(newItem);
-    }
+    // let newItem = new GroceryListItem(name, category, quantity);
+    //
+    // let existingSameItem = this.items.find((i)=>{
+    //   let sameOrNoCategory = !newItem.category || i.category == i.category;
+    //   return sameOrNoCategory && !i.bought && i.name == newItem.name;
+    // });
+    //
+    // if (existingSameItem){
+    //   existingSameItem.quantity += newItem.quantity;
+    // } else {
+    //   this.items.push(newItem);
+    // }
   }
 
   buy(name, category, quantity){
@@ -74,7 +74,7 @@ module.exports = class GroceryList {
   }
 
   sortByCategory(){
-    
+
   }
 
   displayUnboughtItems(){

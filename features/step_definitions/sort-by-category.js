@@ -64,7 +64,10 @@ defineSupportCode(function({
   });
 
   Then('the list should be sorted by descending category.', function() {
-    assert.deepEqual(this.list.items, this.list.items.slice().reverse(), 'Items not sorted descending!');
+    assert.deepEqual(
+      this.list.items, this.list.items.slice().reverse(),
+      'Items not sorted descending!'
+    );
   });
 
   // Scenario: Sort an empty grocery-list
@@ -73,6 +76,11 @@ defineSupportCode(function({
   });
 
   Then('nothing should happen.', function() {
-    assert.doesNotThrow(sortByCategory(), 'Error trying to sort an empty list items array');
+    assert.doesNotThrow(
+      () => {
+        this.list.sortByCategory()
+      },
+      'nothing to see'
+    );
   });
 });
