@@ -28,10 +28,8 @@ defineSupportCode(function({
 
     function isSorted(arr) {
       for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < arr[i + 1]) {
-          return true
-        } else {
-          return false
+        if (arr[i] >= arr[i + 1]) {
+          return false;
         }
       }
     }
@@ -43,24 +41,32 @@ defineSupportCode(function({
 
 
   Then('the list should be sorted by ascending name', function() {
-    assert.deepEqual(this.list.items, this.list.items.sort((a, b) => {
-      return a.name < b.name
-    }), 'Items not sorted ascending!');
+    let ascList = this.list.items.slice().sort((a, b) => {
+      return a.name < b.name;
+    });
+
+    assert.deepEqual(this.list.items, ascList, 'Items not sorted ascending!');
   });
 
 
   Given('it\'s sorted by ascending name', function() {
-    this.list.items.sort((a, b) => {
-      return a.name > b.name
-    });
+    if (!isSorted(this.list.items)) {
+      this.list.sortByName();
+    }
+
+    function isSorted(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= arr[i + 1]) {
+          return false;
+        }
+      }
+    }
   });
 
-
   Then('the list should be sorted by decending name', function() {
-    assert.deepEqual(
-      this.list.items, this.list.items.slice().reverse(),
-      'Items not sorted descending!'
-    );
+    assert.deepEqual(this.list.items, this.list.items.slice().sort((a, b) => {
+      return a.name > b.name
+    }), 'Items not sorted descending!');
   });
 
   Then('nothing should happen', function() {

@@ -63,16 +63,37 @@ module.exports = class GroceryList {
     return this.items.filter(i=>!i.bought);
   }
 
+  displayUnboughtItems(){
+    this.displayUnboughtItems = !this.displayUnboughtItems;
+  }
+
   sortByCategory(){
 
   }
 
   sortByName(){
+    let sortedArray = this.items.slice().sort((a, b) => {
+        return a.name < b.name;
+    });
 
-  }
+    let isAscending = true;
 
-  displayUnboughtItems(){
-    this.displayUnboughtItems = !this.displayUnboughtItems;
+    for (var i = 0; i < sortedArray.length; i++) {
+      if (sortedArray[i] !== this.items[i]){
+        isAscending = false;
+        break;
+      }
+    }
+
+    if (isAscending) {
+      //descending
+      this.items.sort((a, b) => {
+        return a.name > b.name;
+      });
+    } else {
+      //ascending
+      this.items = sortedArray;
+    }
   }
 
   removeFromList(){

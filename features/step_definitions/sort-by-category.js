@@ -17,12 +17,13 @@ defineSupportCode(function({
 
   // Scenario: Sort grocery-list by ascending category
   Given('that there is an existing grocery-list', function() {
+    GroceryList.existingLists = [];
     this.list = new GroceryList('fruities');
   });
 
   Given('that grocery-list has more then zero items', function() {
-    this.list.addToList('banana');
     this.list.addToList('orange');
+    this.list.addToList('banana');
     this.list.addToList('paer');
   });
 

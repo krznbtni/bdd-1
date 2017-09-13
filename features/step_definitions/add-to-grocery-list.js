@@ -7,6 +7,7 @@ defineSupportCode(function({Given, When, Then}) {
   let randomValidName = 'hello';
 
   Given('that I have a grocery list', function () {
+    GroceryList.existingLists = [];
     this.list = new GroceryList();
   });
 
@@ -21,6 +22,7 @@ defineSupportCode(function({Given, When, Then}) {
 
 
   Given('that I have a grocery list with at least {int} unbought item', function (int) {
+    GroceryList.existingLists = [];
     this.int = int;
     assert(int >= 0, 'test-scenario has been changed and doesn\'t make sense anymore, please change it.')
     this.list = new GroceryList();
