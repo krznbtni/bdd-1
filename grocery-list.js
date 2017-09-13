@@ -77,6 +77,10 @@ module.exports = class GroceryList {
 
   }
 
+  sortByName(){
+
+  }
+
   displayUnboughtItems(){
     this.displayUnboughtItems = !this.displayUnboughtItems;
   }

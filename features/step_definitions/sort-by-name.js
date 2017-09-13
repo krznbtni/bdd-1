@@ -38,20 +38,20 @@ defineSupportCode(function({
   });
 
   When('I click the sorting button for name', function() {
-    this.list.sortByCategory();
+    this.list.sortByName();
   });
 
 
   Then('the list should be sorted by ascending name', function() {
     assert.deepEqual(this.list.items, this.list.items.sort((a, b) => {
-      return a.category < b.category
+      return a.name < b.name
     }), 'Items not sorted ascending!');
   });
 
 
   Given('it\'s sorted by ascending name', function() {
     this.list.items.sort((a, b) => {
-      return a.category > b.category
+      return a.name > b.name
     });
   });
 
@@ -66,7 +66,7 @@ defineSupportCode(function({
   Then('nothing should happen', function() {
     assert.doesNotThrow(
       () => {
-        this.list.sortByCategory()
+        this.list.sortByName()
       },
       'nothing to see'
     );
