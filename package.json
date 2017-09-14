@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cucumber": "^3.0.1"
+    "cucumber": "^3.0.1",
+    "express": "^4.15.4"
   }
 }
