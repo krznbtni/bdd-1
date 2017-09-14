@@ -38,10 +38,8 @@ defineSupportCode(function({
 
     function isSorted(arr) {
       for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < arr[i + 1]) {
-          return true
-        } else {
-          return false
+        if (arr[i] >= arr[i + 1]) {
+          return false;
         }
       }
     }
@@ -52,23 +50,32 @@ defineSupportCode(function({
   });
 
   Then('the list should be sorted by ascending category.', function() {
-    assert.deepEqual(this.list.items, this.list.items.sort((a, b) => {
-      return a.category < b.category
-    }), 'Items not sorted ascending!');
+    let ascList = this.list.items.slice().sort((a, b) => {
+      return a.category < b.category;
+    });
+
+    assert.deepEqual(this.list.items, ascList, 'Items not sorted ascending!');
   });
 
   // Scenario: Sort grocery-list by descending category
   Given('it\'s sorted by ascending category', function() {
-    this.list.items.sort((a, b) => {
-      return a.category > b.category
-    });
+    if (!isSorted(this.list.items)) {
+      this.list.sortByCategory();
+    }
+
+    function isSorted(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= arr[i + 1]) {
+          return false;
+        }
+      }
+    }
   });
 
   Then('the list should be sorted by descending category.', function() {
-    assert.deepEqual(
-      this.list.items, this.list.items.slice().reverse(),
-      'Items not sorted descending!'
-    );
+    assert.deepEqual(this.list.items, this.list.items.slice().sort((a, b) => {
+      return a.category > b.category
+    }), 'Items not sorted descending!');
   });
 
   // Scenario: Sort an empty grocery-list
@@ -76,12 +83,9 @@ defineSupportCode(function({
     this.list.items = [];
   });
 
-  Then('nothing should happen.', function() {
-    assert.doesNotThrow(
-      () => {
-        this.list.sortByCategory()
-      },
-      'nothing to see'
-    );
+  Then('nothing should happen.', function () {
+    assert.doesNotThrow(() => {
+      this.list.sortByCategory()
+    }, 'nothing to see!');
   });
 });

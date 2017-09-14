@@ -70,12 +70,9 @@ defineSupportCode(function({
   });
 
   Then('nothing should happen', function() {
-    assert.doesNotThrow(
-      () => {
-        this.list.sortByName()
-      },
-      'nothing to see'
-    );
+    assert.doesNotThrow(() => {
+      this.list.sortByName()
+    }, 'nothing to see');
   });
 
 });

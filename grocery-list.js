@@ -70,7 +70,28 @@ module.exports = class GroceryList {
   }
 
   sortByCategory(){
+    let sortedArray = this.items.slice().sort((a, b) => {
+      return a.category < b.category;
+    });
 
+    let isAscending = true;
+
+    for (var i = 0; i < sortedArray.length; i++) {
+      if (sortedArray[i] !== this.items[i]) {
+        isAscending = false;
+        break;
+      }
+    }
+
+    if (isAscending) {
+      //descending
+      this.items.sort((a, b) => {
+        return a.category > b.category;
+      });
+    } else {
+      //ascending
+      this.items = sortedArray;
+    }
   }
 
   sortByName(){
