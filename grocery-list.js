@@ -34,6 +34,7 @@ module.exports = class GroceryList {
   }
 
   buy(name, category, quantity){
+
     for (let item of this.item){
       if(item.name !== name || item.category !== category || !item.bought){
         continue;
@@ -49,6 +50,7 @@ module.exports = class GroceryList {
 
       item.bought = true;
     }
+
   }
 
   boughtItems(){
