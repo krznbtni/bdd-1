@@ -20,7 +20,6 @@ function require(fileName) {
   let className = fileName.substr(fileName.lastIndexOf('/')+1)
     .replace(/-[a-z]/g,(found)=>found[1].toUpperCase());
 
-
   className = className[0].toUpperCase() + className.substr(1);
 
   return module.mem[className];

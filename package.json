@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "cucumber": "^3.0.1",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "selenium-cucumber-js": "^1.4.9"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
