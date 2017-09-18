@@ -121,8 +121,12 @@ module.exports = class GroceryList {
     }
   }
 
-  removeFromList(){
-
+  removeFromList(name){
+    this.items.forEach((item, index)=>{
+      if (item.name === name) {
+        this.items.splice(index, 1);
+      }
+    });
   }
 
 }
