@@ -2,11 +2,6 @@ const GroceryList = require('./grocery-list');
 
 class AppGui {
 
-  // Decisions to be made in the group:
-  // Should we use a templating library?
-  // Should we handle routing or is this truly one page without back/forward-button compability?
-  // Should we use a heavy framework like Angular.js
-
   constructor(){
     // hide all views (better if in css)
     $('view').hide();
@@ -19,8 +14,11 @@ class AppGui {
   }
 
   defineMainViewEvents() {
-    $(document).on('click', '#addList', function() {
-      new GroceryList();
+    $(document).on('click', '#addListButton', function() {
+
+      let listName = $('#listName');
+
+      new GroceryList(listName.val());
       console.log(GroceryList.existingLists);
     });
   }

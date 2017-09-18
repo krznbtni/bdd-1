@@ -4,8 +4,10 @@
         <meta charset="utf-8">
         <title>Mr. Shopper</title>
 
-        <script src="./chai.js"></script>
-        <script src="./jquery.min.js"></script>
+        <script src="./libs/js/chai.js"></script>
+        <script src="./libs/js/jquery.min.js"></script>
+        <script src="./libs/js/tether.js"></script>
+        <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
         <script src="./fake-module.js"></script>
         <script src="./grocery-list-item.js"></script>
         <script src="./grocery-list.js"></script>
@@ -13,7 +15,8 @@
     </head>
     <body>
         <div class="main-view view">
-            <button id="addList">Add List</button>
+            <input placeholder="Enter list name" type="text" name="list-name" id="listName">
+            <button id="addListButton">Add List</button>
         </div>
 
         <div class="list-detail-view view"></div>

@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="adding-an-item-to-grocery-list;adding-an-item-to-a-grocery-list" tests="3" failures="0" skipped="3">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/add-to-grocery-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have a grocery list" classname="adding-an-item-to-grocery-list;adding-an-item-to-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I add an item with a name to the list" classname="adding-an-item-to-grocery-list;adding-an-item-to-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then that item should be added to the grocery list." classname="adding-an-item-to-grocery-list;adding-an-item-to-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="adding-an-item-to-grocery-list;adding-an-item-to-a-grocery-list-that&apos;s-already-in-the-list-and-unbought" tests="3" failures="0" skipped="3">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/add-to-grocery-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have a grocery list with at least 1 unbought item" classname="adding-an-item-to-grocery-list;adding-an-item-to-a-grocery-list-that&apos;s-already-in-the-list-and-unbought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I add an item to the list that matches an unbought item in the list" classname="adding-an-item-to-grocery-list;adding-an-item-to-a-grocery-list-that&apos;s-already-in-the-list-and-unbought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then I should increment the quantity of that item in the grocery list." classname="adding-an-item-to-grocery-list;adding-an-item-to-a-grocery-list-that&apos;s-already-in-the-list-and-unbought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="displaying-which-grocery-items-have-been-bought;displaying-bought-grocery-items" tests="3" failures="0" skipped="3">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/display-bought-grocery-items.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have a grocery list with bought grocery items" classname="displaying-which-grocery-items-have-been-bought;displaying-bought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the display-bought-grocery-items button" classname="displaying-which-grocery-items-have-been-bought;displaying-bought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then only bought grocery items should be shown" classname="displaying-which-grocery-items-have-been-bought;displaying-bought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="displaying-which-grocery-items-have-been-bought;unsuccessfully-displaying-bought-grocery-items" tests="3" failures="0" skipped="3">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/display-bought-grocery-items.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have not bought any grocery items yet" classname="displaying-which-grocery-items-have-been-bought;unsuccessfully-displaying-bought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the display-bought-grocery-items button" classname="displaying-which-grocery-items-have-been-bought;unsuccessfully-displaying-bought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then a message is shown stating that there are no bought grocery items to display" classname="displaying-which-grocery-items-have-been-bought;unsuccessfully-displaying-bought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="displaying-which-grocery-items-have-not-been-bought-yet;displaying-unbought-grocery-items" tests="3" failures="0" skipped="3">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/display-unbought-grocery-items.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have a grocery list with unbought grocery items" classname="displaying-which-grocery-items-have-not-been-bought-yet;displaying-unbought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the display-unbought-grocery-items button" classname="displaying-which-grocery-items-have-not-been-bought-yet;displaying-unbought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then only unbought grocery items should be shown" classname="displaying-which-grocery-items-have-not-been-bought-yet;displaying-unbought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="displaying-which-grocery-items-have-not-been-bought-yet;unsuccessfully-displaying-unbought-grocery-items" tests="3" failures="0" skipped="3">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/display-unbought-grocery-items.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have no unbought grocery items in my grocery list" classname="displaying-which-grocery-items-have-not-been-bought-yet;unsuccessfully-displaying-unbought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the display-unbought-items button" classname="displaying-which-grocery-items-have-not-been-bought-yet;unsuccessfully-displaying-unbought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then a message is shown stating that there are no unbought grocery items to display" classname="displaying-which-grocery-items-have-not-been-bought-yet;unsuccessfully-displaying-unbought-grocery-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-name" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/grocery-list-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have not entered a valid name for a new item" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to create an item with that info" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then no item should be created" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And I should be notified that a valid name is needed to be supplied" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-category" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/grocery-list-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have not entered a valid category for a new item" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to create an item with that info" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then no item should be created" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And I should be notified that a valid category must be supplied" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-quantity" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/grocery-list-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have entered less than 1 as quantity for a new item" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-quantity">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to create an item with that info" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-quantity">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then no item should be created" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-quantity">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And I should be notified that a quantity of 1 or more must be supplied" classname="creating-an-grocery-list-item;failing-to-create-an-item-with-an-invalid-quantity">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="creating-an-grocery-list-item;failing-to-set-the-name-of-an-item" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/grocery-list-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have not entered a valid name for an existing item" classname="creating-an-grocery-list-item;failing-to-set-the-name-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to set the &quot;name&quot; of the item to that" classname="creating-an-grocery-list-item;failing-to-set-the-name-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then nothing should happen to the item" classname="creating-an-grocery-list-item;failing-to-set-the-name-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And I should be notified that a valid name is needed to be supplied" classname="creating-an-grocery-list-item;failing-to-set-the-name-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="creating-an-grocery-list-item;failing-to-set-the-category-of-an-item" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/grocery-list-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have not entered a valid category for an existing item" classname="creating-an-grocery-list-item;failing-to-set-the-category-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to set the &quot;category&quot; of the item to that" classname="creating-an-grocery-list-item;failing-to-set-the-category-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then nothing should happen to the item" classname="creating-an-grocery-list-item;failing-to-set-the-category-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And I should be notified that a valid category must be supplied" classname="creating-an-grocery-list-item;failing-to-set-the-category-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="creating-an-grocery-list-item;failing-to-set-the-quantity-of-an-item" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/grocery-list-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have entered a quantity of an existing item to be less than 1" classname="creating-an-grocery-list-item;failing-to-set-the-quantity-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to set the &quot;quantity&quot; of the item to that" classname="creating-an-grocery-list-item;failing-to-set-the-quantity-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then nothing should happen to the item" classname="creating-an-grocery-list-item;failing-to-set-the-quantity-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And I should be notified that a quantity of 1 or more must be supplied" classname="creating-an-grocery-list-item;failing-to-set-the-quantity-of-an-item">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="creating-one-or-several-grocery-lists;creating-a-grocery-list" tests="3" failures="0" skipped="3">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/grocery-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I fill in a valid name for a new grocery list" classname="creating-one-or-several-grocery-lists;creating-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the create button" classname="creating-one-or-several-grocery-lists;creating-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then a grocery list should be created" classname="creating-one-or-several-grocery-lists;creating-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="creating-one-or-several-grocery-lists;trying-to-create-a-list-with-an-invalid-name" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/grocery-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I do not fill in a valid name for a new grocery list" classname="creating-one-or-several-grocery-lists;trying-to-create-a-list-with-an-invalid-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the create button" classname="creating-one-or-several-grocery-lists;trying-to-create-a-list-with-an-invalid-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then a grocery list should not be created" classname="creating-one-or-several-grocery-lists;trying-to-create-a-list-with-an-invalid-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And an error message should be shown stating that I must fill in a name for the list" classname="creating-one-or-several-grocery-lists;trying-to-create-a-list-with-an-invalid-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="creating-one-or-several-grocery-lists;trying-to-create-a-list-which-name-has-already-been-used" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/grocery-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I fill in a valid name for a new grocery list that has already been used" classname="creating-one-or-several-grocery-lists;trying-to-create-a-list-which-name-has-already-been-used">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the create button" classname="creating-one-or-several-grocery-lists;trying-to-create-a-list-which-name-has-already-been-used">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then a grocery list should not be created" classname="creating-one-or-several-grocery-lists;trying-to-create-a-list-which-name-has-already-been-used">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And an error message should be shown stating that I have already used the name before" classname="creating-one-or-several-grocery-lists;trying-to-create-a-list-which-name-has-already-been-used">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="marking-one-or-several-grocery-items-as-bought;marking-atleast-one-grocery-item-as-bought" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/marking-grocery-item-as-bought.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have already created a grocery list with atleast one grocery item" classname="marking-one-or-several-grocery-items-as-bought;marking-atleast-one-grocery-item-as-bought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And I have selected atleast one grocery item" classname="marking-one-or-several-grocery-items-as-bought;marking-atleast-one-grocery-item-as-bought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the bought button" classname="marking-one-or-several-grocery-items-as-bought;marking-atleast-one-grocery-item-as-bought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then the grocery items should be marked as bought" classname="marking-one-or-several-grocery-items-as-bought;marking-atleast-one-grocery-item-as-bought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="marking-one-or-several-grocery-items-as-bought;trying-to-mark-unselected-grocery-items-as-bought" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/marking-grocery-item-as-bought.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have already created a grocery list with atleast one grocery item" classname="marking-one-or-several-grocery-items-as-bought;trying-to-mark-unselected-grocery-items-as-bought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And I have not selected a grocery item" classname="marking-one-or-several-grocery-items-as-bought;trying-to-mark-unselected-grocery-items-as-bought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the bought button" classname="marking-one-or-several-grocery-items-as-bought;trying-to-mark-unselected-grocery-items-as-bought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then no grocery items should be marked as bought" classname="marking-one-or-several-grocery-items-as-bought;trying-to-mark-unselected-grocery-items-as-bought">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="removing-an-item-from-my-grocery-list;successfully-removing-an-item-from-a-grocery-list" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/remove-from-grocery-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have a grocery list with at least one item" classname="removing-an-item-from-my-grocery-list;successfully-removing-an-item-from-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to remove an item from the grocery list" classname="removing-an-item-from-my-grocery-list;successfully-removing-an-item-from-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And that item is in the grocery list" classname="removing-an-item-from-my-grocery-list;successfully-removing-an-item-from-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then that item should be removed from the grocery list." classname="removing-an-item-from-my-grocery-list;successfully-removing-an-item-from-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="removing-an-item-from-my-grocery-list;failing-to-remove-an-item-from-a-grocery-list" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/remove-from-grocery-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have a grocery list" classname="removing-an-item-from-my-grocery-list;failing-to-remove-an-item-from-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to remove an item from the grocery list" classname="removing-an-item-from-my-grocery-list;failing-to-remove-an-item-from-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And that item is not in the grocery list" classname="removing-an-item-from-my-grocery-list;failing-to-remove-an-item-from-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then no item should be removed from the grocery list" classname="removing-an-item-from-my-grocery-list;failing-to-remove-an-item-from-a-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="sort-grocery-list-by-category;sort-grocery-list-by-ascending-category" tests="5" failures="0" skipped="5">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/sort-by-category.feature">
+            </property>
+        </properties>
+        <testcase name="Given that there is an existing grocery-list" classname="sort-grocery-list-by-category;sort-grocery-list-by-ascending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And that grocery-list has more then zero items" classname="sort-grocery-list-by-category;sort-grocery-list-by-ascending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And it&apos;s not already sorted by ascending category" classname="sort-grocery-list-by-category;sort-grocery-list-by-ascending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the sorting button for category" classname="sort-grocery-list-by-category;sort-grocery-list-by-ascending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then the list should be sorted by ascending category." classname="sort-grocery-list-by-category;sort-grocery-list-by-ascending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="sort-grocery-list-by-category;sort-grocery-list-by-descending-category" tests="5" failures="0" skipped="5">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/sort-by-category.feature">
+            </property>
+        </properties>
+        <testcase name="Given that there is an existing grocery-list" classname="sort-grocery-list-by-category;sort-grocery-list-by-descending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And that grocery-list has more then zero items" classname="sort-grocery-list-by-category;sort-grocery-list-by-descending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And it&apos;s sorted by ascending category" classname="sort-grocery-list-by-category;sort-grocery-list-by-descending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the sorting button for category" classname="sort-grocery-list-by-category;sort-grocery-list-by-descending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then the list should be sorted by descending category." classname="sort-grocery-list-by-category;sort-grocery-list-by-descending-category">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="sort-grocery-list-by-category;sort-an-empty-grocery-list" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/sort-by-category.feature">
+            </property>
+        </properties>
+        <testcase name="Given that there is an existing grocery-list" classname="sort-grocery-list-by-category;sort-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And that grocery-list has zero items" classname="sort-grocery-list-by-category;sort-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the sorting button for category" classname="sort-grocery-list-by-category;sort-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then nothing should happen." classname="sort-grocery-list-by-category;sort-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="sort-grocery-list-by-name;sort-grocery-list-by-ascending-name" tests="5" failures="0" skipped="5">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/sort-by-name.feature">
+            </property>
+        </properties>
+        <testcase name="Given that there is an existing grocery-list" classname="sort-grocery-list-by-name;sort-grocery-list-by-ascending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And that grocery-list has more then zero items" classname="sort-grocery-list-by-name;sort-grocery-list-by-ascending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And it&apos;s not already sorted by ascending name" classname="sort-grocery-list-by-name;sort-grocery-list-by-ascending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the sorting button for name" classname="sort-grocery-list-by-name;sort-grocery-list-by-ascending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then the list should be sorted by ascending name" classname="sort-grocery-list-by-name;sort-grocery-list-by-ascending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="sort-grocery-list-by-name;sort-grocery-list-by-descending-name" tests="5" failures="0" skipped="5">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/sort-by-name.feature">
+            </property>
+        </properties>
+        <testcase name="Given that there is an existing grocery-list" classname="sort-grocery-list-by-name;sort-grocery-list-by-descending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And that grocery-list has more then zero items" classname="sort-grocery-list-by-name;sort-grocery-list-by-descending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And it&apos;s sorted by ascending name" classname="sort-grocery-list-by-name;sort-grocery-list-by-descending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the sorting button for name" classname="sort-grocery-list-by-name;sort-grocery-list-by-descending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then the list should be sorted by decending name" classname="sort-grocery-list-by-name;sort-grocery-list-by-descending-name">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="sort-grocery-list-by-name;sort-an-empty-grocery-list" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="/home/ygeman/School/bdd-1/selenium-tests/features/sort-by-name.feature">
+            </property>
+        </properties>
+        <testcase name="Given that there is an existing grocery-list" classname="sort-grocery-list-by-name;sort-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And that grocery-list has zero items" classname="sort-grocery-list-by-name;sort-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I click the sorting button for name" classname="sort-grocery-list-by-name;sort-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then nothing should happen" classname="sort-grocery-list-by-name;sort-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+</testsuites>
