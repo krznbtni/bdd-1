@@ -1,12 +1,27 @@
+// emulate module.exports
 class module {
 
   static set exports(classDef){
-    // create a global variable with the class name
-    window[classDef.name] = classDef;
-  }
+    // define a memory for class definitions
+    this.mem = this.mem || {};
 
+    // create a global variable with the class name
+    this.mem[classDef.name] = classDef;
+  }
 }
 
-function require() {
+// emulate require
+function require(fileName) {
 
+  // special for assert
+  if(fileName === 'assert'){return assert;}
+
+  // map fileName to className
+  let className = fileName.substr(fileName.lastIndexOf('/')+1)
+    .replace(/-[a-z]/g,(found)=>found[1].toUpperCase());
+
+
+  className = className[0].toUpperCase() + className.substr(1);
+
+  return module.mem[className];
 }

@@ -1,4 +1,6 @@
-let GroceryListItem = require('./grocery-list-item.js');
+var assert = require('assert');
+
+let GroceryListItem = require('./grocery-list-item');
 
 module.exports = class GroceryList {
 
