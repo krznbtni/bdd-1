@@ -8,7 +8,7 @@ defineSupportCode(function({Given, When, Then}) {
 
   Given('that I have a grocery list', function () {
     GroceryList.existingLists = [];
-    this.list = new GroceryList();
+    this.list = new GroceryList('food');
   });
 
   When('I add an item with a name to the list', function () {

@@ -9,7 +9,7 @@ defineSupportCode(function({Given, When, Then}) {
 
   Given('that I have a grocery list with at least one item', function () {
     GroceryList.existingLists = [];
-    groceryList = new GroceryList();
+    groceryList = new GroceryList('food');
 
     groceryList.addToList('Tuna');
     groceryList.addToList('Chicken');
