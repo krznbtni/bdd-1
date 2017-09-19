@@ -16,10 +16,15 @@ class AppGui {
   defineMainViewEvents() {
     $(document).on('click', '#addListButton', function() {
 
-      let listName = $('#listName');
+      let listName = $('#listName').val();
 
-      new GroceryList(listName.val());
+      let newList = new GroceryList(listName);
       console.log(GroceryList.existingLists);
+
+      $('#createdLists').prepend(
+        $('<li>').append(newList)
+      );
+
     });
   }
 

@@ -14,12 +14,30 @@
         <script src="./app-gui.js"></script>
     </head>
     <body>
-        <div class="main-view view">
-            <input placeholder="Enter list name" type="text" name="list-name" id="listName">
-            <button id="addListButton">Add List</button>
-        </div>
 
-        <div class="list-detail-view view"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="row">
+
+                        <div class="col-md-3 main-view view">
+                            <input placeholder="Enter list name" type="text" name="list-name" id="listName">
+                            <button id="addListButton">Add List</button>
+
+                            <div class="col-md-3">
+                                <h2>Existing lists</h2>
+                                <ul id="createdLists">
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 list-detail-view view">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </body>
 </html>
