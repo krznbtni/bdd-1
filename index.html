@@ -15,9 +15,6 @@
     <script src="./grocery-list-item.js"></script>
     <script src="./grocery-list.js"></script>
     <script src="./app-gui.js" defer></script>
-
-    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/main.css">
   </head>
   <body>
 
@@ -31,7 +28,7 @@
             </button>
           </div>
 
-          <div class="col-md-10">
+          <div class="col-md-10 main-view-lists">
             <h2>Existing lists</h2>
             <ul id="createdLists">
             </ul>
@@ -59,7 +56,7 @@
           </div>
           <div class="modal-body">
             <input placeholder="Enter list name" type="text" name="list-name" id="listName">
-            <button class="btn btn-primary btn-sm" id="addListButton">Add List</button>
+            <button type="button" data-dismiss="modal" class="btn btn-primary btn-sm" id="addListButton">Add List</button>
           </div>
         </div>
       </div>
