@@ -7,7 +7,7 @@
     "test": "cd selenium-tests & node ../node_modules/selenium-cucumber-js/index.js & exit 0",
     "dennis": "cd selenium-tests & node ../node_modules/selenium-cucumber-js/index.js -f ./features/grocery-list.feature & exit 0",
     "karzan": "cd selenium-tests & node ../node_modules/selenium-cucumber-js/index.js -f ./features/grocery-list.feature & exit 0",
-    "martin": "cd selenium-tests & node ../node_modules/selenium-cucumber-js/index.js -f ./features/grocery-list.feature & exit 0",
+    "martin": "cd selenium-tests && node ../node_modules/selenium-cucumber-js/index.js -f ./features/grocery-list.feature & exit 0",
     "backend-test": "cucumber-js & exit 0",
     "backend-test-feature": "cucumber-js features/sort-by-name.feature & exit 0"
   },
