@@ -1,5 +1,3 @@
-var assert = require('assert');
-
 // emulate module.exports
 class module {
 
@@ -16,7 +14,7 @@ class module {
 function require(fileName) {
 
   // special for assert
-  if(fileName === 'assert'){return assert;}
+  if(fileName === 'assert'){return chai.assert;}
 
   // map fileName to className
   let className = fileName.substr(fileName.lastIndexOf('/')+1)
