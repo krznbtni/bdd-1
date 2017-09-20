@@ -4,13 +4,11 @@ class AppGui {
 
   constructor(){
     // hide all views (better if in css)
-    $('view').hide();
-
-    // show main-view initially
-    $('main-view').show();
+    $('.list-detail-view').hide();
 
     // define events
     this.defineMainViewEvents();
+    this.defineListDetailViewEvents();
   }
 
   defineMainViewEvents() {
@@ -23,8 +21,16 @@ class AppGui {
 
       $('#createdLists').prepend(
         $('<li>').append(newList.name)
+                  .append('<button class="show-detailed-view">show detailed view</button>')
       );
 
+    });
+  }
+
+  defineListDetailViewEvents() {
+    $(document).on('click', '.show-detailed-view', function() {
+      $('.main-view').hide();
+      $('.list-detail-view').show();
     });
   }
 
