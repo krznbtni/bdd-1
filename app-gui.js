@@ -10,6 +10,7 @@ class AppGui {
     this.defineListDetailViewEvents();
 
     this.autoCreateAndViewAList();
+    this.clearModalInput();
   }
 
   autoCreateAndViewAList(){
@@ -116,6 +117,12 @@ class AppGui {
 
     $('.main-view').hide();
     $('.list-detail-view').show();
+  }
+
+  clearModalInput() {
+    $('#modal').on('hidden.bs.modal', function() {
+      $(this).find('input,textarea,select').val('').end();
+    });
   }
 
 }
