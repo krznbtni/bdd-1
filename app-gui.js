@@ -3,7 +3,6 @@ const GroceryList = require('./grocery-list');
 class AppGui {
 
   constructor(){
-    // hide all views (better if in css)
     $('.list-detail-view').hide();
 
     // define events
@@ -17,10 +16,9 @@ class AppGui {
       let listName = $('#listName').val();
 
       let newList = new GroceryList(listName);
-      console.log(GroceryList.existingLists);
 
       $('#createdLists').prepend(
-        $('<li>').append(newList.name)
+        $('<li>').append('<span>'+newList.name+'</span>')
                   .append('<button class="show-detailed-view">show detailed view</button>')
       );
 
@@ -28,10 +26,20 @@ class AppGui {
   }
 
   defineListDetailViewEvents() {
+    let that = this;
     $(document).on('click', '.show-detailed-view', function() {
-      $('.main-view').hide();
-      $('.list-detail-view').show();
+      let b = $(this).prev().text();
+      that.switchToDetailView(b);
     });
+  }
+
+  switchToDetailView(listName){
+    this.currentList = GroceryList.existingLists[listName];
+    // delete GroceryList.existingLists[listName];
+    // this.currentList.sortByName();
+
+    $('.main-view').hide();
+    $('.list-detail-view').show();
   }
 
 }
