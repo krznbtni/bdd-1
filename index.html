@@ -23,7 +23,7 @@
 
         <div class="col-md-12 main-view">
           <div class="col-md-2 main-view-top-buttons">
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal">
+            <button type="button" id="add-list" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal">
               +
             </button>
           </div>
@@ -35,8 +35,12 @@
           </div>
         </div>
 
-        <div class="col-md-12 list-detail-view">
+        <div class="col list-detail-view">
+          <button id="back-button">Back</button>
           <h2>Groceries</h2>
+          <button id="add-grocery" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal">
+            Add Grocery
+          </button>
           <ul id="list-items">
           </ul>
         </div>
@@ -46,7 +50,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade lists" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -56,8 +60,8 @@
           </div>
           <div class="modal-body">
             <input placeholder="Enter list name" type="text" name="list-name" id="listName">
-            <button type="button" data-dismiss="modal" class="btn btn-primary btn-sm" id="addListButton">Add List</button>
           </div>
+          <button type="button" data-dismiss="modal" class="btn btn-primary btn-sm" id="addListButton">Add List</button>
         </div>
       </div>
     </div>
