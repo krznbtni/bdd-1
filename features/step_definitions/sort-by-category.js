@@ -11,7 +11,7 @@ defineSupportCode(function({Given,When,Then}) {
 
   // Scenario: Sort grocery-list by ascending category
   Given('that there is an existing grocery-list', function() {
-    GroceryList.existingLists = [];
+    GroceryList.existingLists = {};
     this.list = new GroceryList('fruities');
   });
 

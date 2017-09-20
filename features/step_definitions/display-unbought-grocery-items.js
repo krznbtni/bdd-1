@@ -16,7 +16,7 @@ defineSupportCode(function({
   // then = blev resultatet av When det vi förväntar oss ska hända
 
   Given('that I have a grocery list with unbought grocery items', function() {
-    GroceryList.existingLists = [];
+    GroceryList.existingLists = {};
     this.list = new GroceryList('fruities');
     this.list.items = ['banana', 'apple', 'other'];
   });
@@ -30,7 +30,7 @@ defineSupportCode(function({
   });
 
   Given('that I have no unbought grocery items in my grocery list', function() {
-    GroceryList.existingLists = [];
+    GroceryList.existingLists = {};
     this.list = new GroceryList('fruities');
     assert(this.list.items.length == 0, 'list is not empty');
     this.list.items = [];

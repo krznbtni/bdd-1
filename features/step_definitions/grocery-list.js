@@ -29,12 +29,12 @@ defineSupportCode(function({Given, When, Then}) {
   });
 
   When('I click the create button', function () {
-    GroceryList.existingLists = [];
+    GroceryList.existingLists = {};
     this.newList = new GroceryList(this.name);
   });
 
   Then('a grocery list should be created', function () {
-    GroceryList.existingLists = [];
+    GroceryList.existingLists = {};
     assert(this.newList !== undefined);
 
     assert(this.newList.constructor.name);

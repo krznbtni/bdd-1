@@ -5,7 +5,7 @@ let GroceryList = require('../../grocery-list.js');
 defineSupportCode(function({Given, When, Then}) {
 
   Given('that I have a grocery list with bought grocery items', function () {
-    GroceryList.existingLists = [];
+    GroceryList.existingLists = {};
     this.list = new GroceryList();
     this.list.addToList('pear');
     this.list.addToList('apple');
@@ -46,7 +46,7 @@ defineSupportCode(function({Given, When, Then}) {
 
 
   Given('that I have not bought any grocery items yet', function (callback) {
-    GroceryList.existingLists = [];
+    GroceryList.existingLists = {};
     this.list = new GroceryList();
     this.list.addToList('pear');
     this.list.addToList('apple');

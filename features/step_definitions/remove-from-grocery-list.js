@@ -8,7 +8,7 @@ defineSupportCode(function({Given, When, Then}) {
   let groceryList;
 
   Given('that I have a grocery list with at least one item', function () {
-    GroceryList.existingLists = [];
+    GroceryList.existingLists = {};
     groceryList = new GroceryList('food');
 
     groceryList.addToList('Tuna');
