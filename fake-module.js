@@ -1,3 +1,5 @@
+var assert = require('assert');
+
 // emulate module.exports
 class module {
 

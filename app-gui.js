@@ -22,7 +22,7 @@ class AppGui {
       console.log(GroceryList.existingLists);
 
       $('#createdLists').prepend(
-        $('<li>').append(newList)
+        $('<li>').append(newList.name)
       );
 
     });

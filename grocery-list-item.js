@@ -1,4 +1,5 @@
-let assert = require('assert');
+var assert = require('assert');
+
 module.exports = class GroceryListItem {
   constructor(name, category = '', quantity = 1){
     assert(typeof name == 'string' && name != '', 'Tried to create an item with an invalid name');
