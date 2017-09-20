@@ -13,16 +13,28 @@ class AppGui {
   defineMainViewEvents() {
     $(document).on('click', '#addListButton', function() {
 
-      let listName = $('#listName').val();
+      let theListName = $('#listName').val();
 
-      let newList = new GroceryList(listName);
+      let newList = new GroceryList(theListName);
 
       $('#createdLists').prepend(
         $('<li>').append('<span>'+newList.name+'</span>')
-                  .append('<button class="show-detailed-view">show detailed view</button>')
+                  .append('<button class="btn btn-primary btn-sm show-detailed-view">show detailed view</button>')
+                  .append('<button class="btn btn-primary btn-sm delete-list-button">delete</button>')
       );
-
     });
+
+    $(document).on('click', '.delete-list-button', function() {
+      // SAVE THE SPAN TEXT
+      let theListName = $(this).parent().find('span').text();
+
+      // DELETE LIST OBJECT FROM BACKEND
+      delete GroceryList.existingLists[theListName];
+
+      // DELETE LIST OBJECT FROM DOM
+      $(this).parent().remove();
+    });
+
   }
 
   defineListDetailViewEvents() {
