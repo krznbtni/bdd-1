@@ -7,15 +7,14 @@ module.exports = class GroceryList {
     this.items = [];
 
     //gör den statisk
-    GroceryList.existingLists = GroceryList.existingLists || [];
+    GroceryList.existingLists = GroceryList.existingLists || {};
 
     if (typeof name !== 'string' || name === ''){
       throw new Error ('Invalid input. Must be a non-empty string...');
-    } else if (GroceryList.existingLists.includes(name) === true) {
+    } else if (GroceryList.existingLists[name]) {
       throw new Error ('List name already exists!');
     }
-
-    GroceryList.existingLists.push(name);
+    GroceryList.existingLists[name] = this;
   }
 
   addToList(name, category, quantity){

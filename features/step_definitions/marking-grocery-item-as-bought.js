@@ -10,7 +10,7 @@ defineSupportCode(function({Given, When, Then}) {
   let groceryList;
 
   Given('that I have already created a grocery list with atleast one grocery item', function () {
-    GroceryList.existingLists = [];
+    GroceryList.existingLists = {};
     groceryList = new GroceryList();
 
     groceryList.addToList('bubblegum');

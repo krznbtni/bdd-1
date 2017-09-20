@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Mr. Shopper</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Mr. Shopper</title>
 
-        <script src="./libs/js/chai.js"></script>
-        <script src="./libs/js/jquery.min.js"></script>
-        <script src="./libs/js/tether.js"></script>
-        <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
-        <script src="./fake-module.js"></script>
-        <script src="./grocery-list-item.js"></script>
-        <script src="./grocery-list.js"></script>
-        <script src="./app-gui.js"></script>
-    </head>
-    <body>
+    <script src="./libs/js/chai.js"></script>
+    <script src="./libs/js/jquery.min.js"></script>
+    <script src="./libs/js/tether.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./fake-module.js"></script>
+    <script src="./grocery-list-item.js"></script>
+    <script src="./grocery-list.js"></script>
+    <script src="./app-gui.js" defer></script>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="row">
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  <body>
 
-                        <div class="col-md-3 main-view view">
-                            <input placeholder="Enter list name" type="text" name="list-name" id="listName">
-                            <button id="addListButton">Add List</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 main-view">
+          <input placeholder="Enter list name" type="text" name="list-name" id="listName">
+          <button id="addListButton">Add List</button>
 
-                            <div class="col-md-3">
-                                <h2>Existing lists</h2>
-                                <ul id="createdLists">
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 list-detail-view view">
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+          <div class="col-md-3">
+            <h2>Existing lists</h2>
+            <ul id="createdLists">
+            </ul>
+          </div>
         </div>
 
-    </body>
+        <div class="col-md-3 list-detail-view">
+          <h2>Groceries</h2>
+          <ul id="list-items">
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
 </html>
