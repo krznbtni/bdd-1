@@ -16,6 +16,7 @@ class AppGui {
   autoCreateAndViewAList(){
     let newList = new GroceryList('hej');
     this.switchToDetailView('hej');
+    this.currentList.addToList('namnet','kategorin', 5);
   }
 
   defineMainViewEvents() {

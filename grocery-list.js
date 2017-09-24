@@ -5,6 +5,8 @@ module.exports = class GroceryList {
   constructor(name){
     this.name = name;
     this.items = [];
+    this.displayBoughtItems = true;
+    this.displayUnboughtItems = true;
 
     //gör den statisk
     GroceryList.existingLists = GroceryList.existingLists || {};
