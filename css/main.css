@@ -5,3 +5,13 @@
 .list-detail-view h2 {
   display: inline-block;
 }
+
+#list-items li {
+  margin-top: 5px;
+}
+
+#list-items input {
+  border-radius: 5px;
+  border-style: ridge;
+  padding: 2px 5px;
+}

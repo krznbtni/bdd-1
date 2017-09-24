@@ -17,6 +17,7 @@ class AppGui {
     let newList = new GroceryList('hej');
     this.switchToDetailView('hej');
     this.currentList.addToList('namnet','kategorin', 5);
+    this.renderItems();
   }
 
   defineMainViewEvents() {
@@ -58,14 +59,20 @@ class AppGui {
     $(document).on('click', '.detailed #addListButton', function() {
       let name = $('#modal #name').val();
       that.currentList.addToList(name, $('#modal #category').val(), $('#modal #quantity').val()*1);
-
-      $('<li>')
-      .append('<span>'+name+'</span>')
-      .prependTo('#list-items');
+      that.renderItems();
     });
 
     $('#back-button').on('click', ()=>this.switchToMainView());
     $('#add-grocery').on('click', ()=>this.openAddGrocery());
+
+    $(document).on('keyup', '#list-items li input', function(){
+      let index = $(this).parent().data('index');
+      let property = $(this).data('prop');
+      let value = $(this).val();
+      try {
+        that.currentList.items[index][property] = value;
+      } catch(e){};
+    });
   }
 
   switchToMainView(){
@@ -110,14 +117,24 @@ class AppGui {
 
     $('.list-detail-view h2').text(listName);
 
-    $('.list-items').empty();
-
-    this.currentList.items.forEach((item)=>{
-      $('.list-items').append('<span>'+item.name+'</span>');
-    });
+    this.renderItems();
 
     $('.main-view').hide();
     $('.list-detail-view').show();
+  }
+
+  renderItems(){
+    $('#list-items').empty();
+
+    this.currentList.items.forEach((item, index)=>{
+      $('#list-items').append(`
+      <li data-index="${index}">
+        <input data-prop="name" value="${item.name}">
+        <input data-prop="category" value="${item.category}">
+        <input data-prop="quantity" type="number" value="${item.quantity}">
+      </li>
+    `);
+    });
   }
 
   clearModalInput() {

@@ -23,8 +23,7 @@ module.exports = class GroceryList {
     let newItem = new GroceryListItem(name, category, quantity);
 
     let existingSameItem = this.items.find((i)=>{
-      let sameOrNoCategory = !newItem.category || i.category == i.category;
-      return sameOrNoCategory && !i.bought && i.name == newItem.name;
+      return i.category == newItem.category && i.name == newItem.name && !i.bought;
     });
 
     if (existingSameItem){
