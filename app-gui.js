@@ -9,7 +9,7 @@ class AppGui {
     this.defineMainViewEvents();
     this.defineListDetailViewEvents();
 
-    //this.autoCreateAndViewAList();
+    this.autoCreateAndViewAList();
     this.clearModalInput();
   }
 
