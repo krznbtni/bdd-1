@@ -73,6 +73,14 @@ class AppGui {
         that.currentList.items[index][property] = value;
       } catch(e){};
     });
+
+    $(document).on('click', '#list-items li button', function(){
+      let name = $(this).parent().find('[data-prop="name"]').val();
+      let cat =  $(this).parent().find('[data-prop="category"]').val();
+      let q =    $(this).parent().find('[data-prop="quantity"]').val()*1;
+      that.currentList.buy(name, cat, q);
+      that.renderItems();
+    });
   }
 
   switchToMainView(){
@@ -127,11 +135,18 @@ class AppGui {
     $('#list-items').empty();
 
     this.currentList.items.forEach((item, index)=>{
+      let button = `<button type="button" class="btn btn-success btn-sm">Buy</button>`;
+      if (item.bought) {
+        button = `<button type="button" class="btn btn-success btn-sm" disabled>Bought</button>`;
+      }
+
+      $(this).toggleClass('btn-success').text('Bought');
       $('#list-items').append(`
       <li data-index="${index}">
         <input data-prop="name" value="${item.name}">
         <input data-prop="category" value="${item.category}">
         <input data-prop="quantity" type="number" value="${item.quantity}">
+        ${button}
       </li>
     `);
     });

@@ -35,12 +35,21 @@ module.exports = class GroceryList {
 
   buy(name, category, quantity){
 
-    for (let item of this.item){
+    for (let item of this.items){
       if(item.name !== name || item.category !== category || !item.bought){
         continue;
       }
 
       item.quantity += quantity;
+
+      // After merging, remove the duplicate
+      for (let i = 0; i < this.items.length; ++i){
+        let item = this.items[i];
+        if (item.name == name && item.category == category && !item.bought){
+          this.items.splice(i, 1);
+          break;
+        }
+      }
     }
 
     for(let item of this.items){
@@ -50,7 +59,6 @@ module.exports = class GroceryList {
 
       item.bought = true;
     }
-
   }
 
   boughtItems(){
@@ -119,9 +127,9 @@ module.exports = class GroceryList {
     }
   }
 
-  removeFromList(name){
+  removeFromList(name, category){
     this.items.forEach((item, index)=>{
-      if (item.name === name) {
+      if (item.name == name && item.category == category) {
         this.items.splice(index, 1);
       }
     });
