@@ -9,14 +9,18 @@ class AppGui {
     this.defineMainViewEvents();
     this.defineListDetailViewEvents();
 
-    //this.autoCreateAndViewAList();
+    this.autoCreateAndViewAList();
     this.clearModalInput();
   }
 
   autoCreateAndViewAList() {
     let newList = new GroceryList('hej');
     this.switchToDetailView('hej');
-    this.currentList.addToList('namnet', 'kategorin', 5);
+    this.currentList.addToList('Milk','Dairies', 5);
+    this.currentList.addToList('Crisps','Snacks', 5);
+    this.currentList.addToList('Cucumber','Vegetables', 5);
+    this.currentList.addToList('Apple','Fruits', 5);
+    this.currentList.addToList('Salmon','Sea...food?', 5);
     this.renderItems();
   }
 
@@ -51,13 +55,8 @@ class AppGui {
     $('#add-list').on('click', () => this.openAddList());
 
     $(document).on('click', '.delete-list-button', function() {
-      // SAVE THE SPAN TEXT
       let theListName = $(this).parent().find('span').text();
-
-      // DELETE LIST OBJECT FROM BACKEND
       delete GroceryList.existingLists[theListName];
-
-      // DELETE LIST OBJECT FROM DOM
       $(this).parent().remove();
     });
 
@@ -76,8 +75,14 @@ class AppGui {
       that.renderItems();
     });
 
+<<<<<<< HEAD
     $('#back-button').on('click', () => this.switchToMainView());
     $('#add-grocery').on('click', () => this.openAddGrocery());
+=======
+    $('#back-button').on('click', ()=>this.switchToMainView());
+    $('#sort-list-button').on('click', ()=>this.openSortList());
+    $('#add-grocery').on('click', ()=>this.openAddGrocery());
+>>>>>>> 6081998a8ef76f532307b84eb30a1c93a7fe946e
 
     $(document).on('keyup', '#list-items li input', function() {
       let index = $(this).parent().data('index');
@@ -95,6 +100,17 @@ class AppGui {
       that.currentList.buy(name, cat, q);
       that.renderItems();
     });
+
+    $(document).on('click', '#sort-list-by-category-button', function(){
+      that.currentList.sortByCategory();
+      that.renderItems();
+    });
+
+    $(document).on('click', '#sort-list-by-name-button', function(){
+      that.currentList.sortByName();
+      that.renderItems();
+    });
+
   }
 
   switchToMainView() {
@@ -129,13 +145,32 @@ class AppGui {
     `);
   }
 
+<<<<<<< HEAD
   switchToDetailView(listName) {
+=======
+  openSortList(){
+    let mb = $('.modal.detailed .modal-body');
+    mb.empty();
+    mb.append(`
+      <div class="col-6">
+        <button id="sort-list-by-category-button" type="button" class="btn btn-primary btn-sm">
+          Sort By Category
+        </button>
+      </div>
+      <div class="col-6">
+        <button id="sort-list-by-name-button" type="button" class="btn btn-primary btn-sm">
+          Sort By Name
+        </button>
+      </div>
+    `);
+  }
+
+  switchToDetailView(listName){
+>>>>>>> 6081998a8ef76f532307b84eb30a1c93a7fe946e
     $('#modal').toggleClass('lists');
     $('#modal').toggleClass('detailed');
 
     this.currentList = GroceryList.existingLists[listName];
-    // delete GroceryList.existingLists[listName];
-    // this.currentList.sortByName();
 
     $('.list-detail-view h2').text(listName);
 
