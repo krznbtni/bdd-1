@@ -43,6 +43,18 @@
         <div class="col list-detail-view">
           <button id="back-button" type="button" class="btn btn-sm">Back</button>
           <h2>Groceries</h2>
+
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="display-bought-unbought-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Filter Display
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" id="display-all" href="#">Show All Items</a>
+              <a class="dropdown-item" id="display-bought" href="#">Show Bought Items</a>
+              <a class="dropdown-item" id="display-unbought" href="#">Show Unbought Items</a>
+            </div>
+          </div>
+
           <button id="sort-list-button" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal">
             Sort List
           </button>

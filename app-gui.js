@@ -106,6 +106,52 @@ class AppGui {
       that.renderItems();
     });
 
+    $(document).on('click', '#display-bought', function(){
+      $('#list-items').empty();
+
+      that.currentList.items.forEach((item, index) => {
+        let button = `<button type="button" class="btn btn-success btn-sm">Buy</button>`;
+
+        if (item.bought) {
+          button = `<button type="button" class="btn btn-success btn-sm" disabled>Bought</button>`;
+
+          $('#list-items').append(`
+          <li data-index="${index}">
+            <input data-prop="name" value="${item.name}">
+            <input data-prop="category" value="${item.category}">
+            <input data-prop="quantity" type="number" value="${item.quantity}">
+            ${button}
+          </li>
+        `);
+        }
+      })
+    });
+
+    $(document).on('click', '#display-unbought', function(){
+      $('#list-items').empty();
+
+      that.currentList.items.forEach((item, index) => {
+        let button = `<button type="button" class="btn btn-success btn-sm" disabled>Bought</button>`;
+
+        if (!item.bought) {
+          button = `<button type="button" class="btn btn-success btn-sm">Buy</button>`;
+
+          $('#list-items').append(`
+          <li data-index="${index}">
+            <input data-prop="name" value="${item.name}">
+            <input data-prop="category" value="${item.category}">
+            <input data-prop="quantity" type="number" value="${item.quantity}">
+            ${button}
+          </li>
+        `);
+        }
+      })
+    });
+
+    $(document).on('click', '#display-all', function(){
+      that.renderItems();
+    });
+
   }
 
   switchToMainView() {
