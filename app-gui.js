@@ -9,7 +9,7 @@ class AppGui {
     this.defineMainViewEvents();
     this.defineListDetailViewEvents();
 
-    this.autoCreateAndViewAList();
+    //this.autoCreateAndViewAList();
     this.clearModalInput();
   }
 
@@ -75,14 +75,9 @@ class AppGui {
       that.renderItems();
     });
 
-<<<<<<< HEAD
-    $('#back-button').on('click', () => this.switchToMainView());
-    $('#add-grocery').on('click', () => this.openAddGrocery());
-=======
     $('#back-button').on('click', ()=>this.switchToMainView());
     $('#sort-list-button').on('click', ()=>this.openSortList());
     $('#add-grocery').on('click', ()=>this.openAddGrocery());
->>>>>>> 6081998a8ef76f532307b84eb30a1c93a7fe946e
 
     $(document).on('keyup', '#list-items li input', function() {
       let index = $(this).parent().data('index');
@@ -145,9 +140,6 @@ class AppGui {
     `);
   }
 
-<<<<<<< HEAD
-  switchToDetailView(listName) {
-=======
   openSortList(){
     let mb = $('.modal.detailed .modal-body');
     mb.empty();
@@ -166,7 +158,6 @@ class AppGui {
   }
 
   switchToDetailView(listName){
->>>>>>> 6081998a8ef76f532307b84eb30a1c93a7fe946e
     $('#modal').toggleClass('lists');
     $('#modal').toggleClass('detailed');
 
