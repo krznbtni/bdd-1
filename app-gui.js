@@ -28,7 +28,7 @@ class AppGui {
       let newList = new GroceryList(theListName);
 
       $('#createdLists').prepend(
-        $('<li>').append('<span>'+newList.name+'</span>')
+        $('<li id="'+newList.name+'">').append('<span>'+newList.name+'</span>')
                   .append('<button class="btn btn-primary btn-sm show-detailed-view">show detailed view</button>')
                   .append('<button class="btn btn-primary btn-sm delete-list-button">delete</button>')
       );

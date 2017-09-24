@@ -2,6 +2,8 @@ const GroceryList = require('../../grocery-list');
 
 module.exports = function() {
 
+  let listName = "minLista"
+
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -19,7 +21,23 @@ module.exports = function() {
     await sleep(500);
 
     // Fill in some text (the name of a list)
-    let listName = "Grönsaker"
+    await inputField.sendKeys(listName);
+  });
+
+  this.Given(/^that I do not fill in a valid name for a new grocery list$/, async function() {
+    // Navigate to the app in the browser
+    await helpers.loadPage('http://localhost:3000');
+
+    // Click addList btn
+    let addListBtn = await driver.findElement(by.css('#add-list'));
+    await addListBtn.click();
+
+    // Find the input field for list name
+    let inputField = await driver.findElement(by.css('#listName'));
+    await sleep(500);
+
+    // invalid list name
+    let listName = ""
     await inputField.sendKeys(listName);
   });
 
@@ -30,6 +48,16 @@ module.exports = function() {
   });
 
   this.Then(/^a grocery list should be created$/, async function() {
-    
+    let element = await driver.findElement(by.css('li#'+listName));
+    expect(element).to.exist;
+  });
+
+  this.Then(/^a grocery list should not be created$/, async function() {
+    let element = await driver.findElements(By.css('li#'+listName)) < 1 ? false:true
+    expect(element).to.equal(false);
+  });
+
+  this.Then(/^an error message should be shown stating that I must fill in a name for the list$/, async function () {
+
   });
 }
