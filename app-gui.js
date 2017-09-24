@@ -2,7 +2,7 @@ const GroceryList = require('./grocery-list');
 
 class AppGui {
 
-  constructor(){
+  constructor() {
     $('.list-detail-view').hide();
 
     // define events
@@ -13,28 +13,42 @@ class AppGui {
     this.clearModalInput();
   }
 
-  autoCreateAndViewAList(){
+  autoCreateAndViewAList() {
     let newList = new GroceryList('hej');
     this.switchToDetailView('hej');
-    this.currentList.addToList('namnet','kategorin', 5);
+    this.currentList.addToList('namnet', 'kategorin', 5);
     this.renderItems();
   }
 
   defineMainViewEvents() {
     $(document).on('click', '.lists #addListButton', function() {
 
-      let theListName = $('#listName').val();
+      // get list name value
+      let theListName = $('#listName').val()
 
-      let newList = new GroceryList(theListName);
+      // check if there is existing lists
+      if (GroceryList.existingLists != undefined) {
+        for (let key in GroceryList.existingLists) {
+          if (theListName === key) {
+            document.getElementById("error-msg").innerHTML = 'Listan finns redan, välj ett annat namn';
+            $("#displayError").removeClass('invisible');
+          }
+        }
+      }
+
+      let newList = new GroceryList(theListName)
 
       $('#createdLists').prepend(
-        $('<li id="'+newList.name+'">').append('<span>'+newList.name+'</span>')
-                  .append('<button class="btn btn-primary btn-sm show-detailed-view">show detailed view</button>')
-                  .append('<button class="btn btn-primary btn-sm delete-list-button">delete</button>')
+        $('<li id="' + newList.name + '">').append('<span>' + newList.name + '</span>')
+        .append('<button class="btn btn-primary btn-sm show-detailed-view">show detailed view</button>')
+        .append('<button class="btn btn-primary btn-sm delete-list-button">delete</button>')
       );
+
+
+
     });
 
-    $('#add-list').on('click', ()=>this.openAddList());
+    $('#add-list').on('click', () => this.openAddList());
 
     $(document).on('click', '.delete-list-button', function() {
       // SAVE THE SPAN TEXT
@@ -58,32 +72,32 @@ class AppGui {
 
     $(document).on('click', '.detailed #addListButton', function() {
       let name = $('#modal #name').val();
-      that.currentList.addToList(name, $('#modal #category').val(), $('#modal #quantity').val()*1);
+      that.currentList.addToList(name, $('#modal #category').val(), $('#modal #quantity').val() * 1);
       that.renderItems();
     });
 
-    $('#back-button').on('click', ()=>this.switchToMainView());
-    $('#add-grocery').on('click', ()=>this.openAddGrocery());
+    $('#back-button').on('click', () => this.switchToMainView());
+    $('#add-grocery').on('click', () => this.openAddGrocery());
 
-    $(document).on('keyup', '#list-items li input', function(){
+    $(document).on('keyup', '#list-items li input', function() {
       let index = $(this).parent().data('index');
       let property = $(this).data('prop');
       let value = $(this).val();
       try {
         that.currentList.items[index][property] = value;
-      } catch(e){};
+      } catch (e) {};
     });
 
-    $(document).on('click', '#list-items li button', function(){
+    $(document).on('click', '#list-items li button', function() {
       let name = $(this).parent().find('[data-prop="name"]').val();
-      let cat =  $(this).parent().find('[data-prop="category"]').val();
-      let q =    $(this).parent().find('[data-prop="quantity"]').val()*1;
+      let cat = $(this).parent().find('[data-prop="category"]').val();
+      let q = $(this).parent().find('[data-prop="quantity"]').val() * 1;
       that.currentList.buy(name, cat, q);
       that.renderItems();
     });
   }
 
-  switchToMainView(){
+  switchToMainView() {
     $('#modal').toggleClass('lists');
     $('#modal').toggleClass('detailed');
 
@@ -91,7 +105,7 @@ class AppGui {
     $('.main-view').show();
   }
 
-  openAddGrocery(){
+  openAddGrocery() {
     let mb = $('.modal.detailed .modal-body');
     mb.empty();
     mb.append(`
@@ -107,7 +121,7 @@ class AppGui {
     `);
   }
 
-  openAddList(){
+  openAddList() {
     let mb = $('.modal.lists .modal-body');
     mb.empty();
     mb.append(`
@@ -115,7 +129,7 @@ class AppGui {
     `);
   }
 
-  switchToDetailView(listName){
+  switchToDetailView(listName) {
     $('#modal').toggleClass('lists');
     $('#modal').toggleClass('detailed');
 
@@ -131,10 +145,10 @@ class AppGui {
     $('.list-detail-view').show();
   }
 
-  renderItems(){
+  renderItems() {
     $('#list-items').empty();
 
-    this.currentList.items.forEach((item, index)=>{
+    this.currentList.items.forEach((item, index) => {
       let button = `<button type="button" class="btn btn-success btn-sm">Buy</button>`;
       if (item.bought) {
         button = `<button type="button" class="btn btn-success btn-sm" disabled>Bought</button>`;
