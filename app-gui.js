@@ -9,7 +9,7 @@ class AppGui {
     this.defineMainViewEvents();
     this.defineListDetailViewEvents();
 
-    this.autoCreateAndViewAList();
+    //this.autoCreateAndViewAList();
     this.clearModalInput();
   }
 
@@ -36,6 +36,9 @@ class AppGui {
           if (theListName === key) {
             document.getElementById("error-msg").innerHTML = 'Listan finns redan, välj ett annat namn';
             $("#displayError").removeClass('invisible');
+            setTimeout(function(){
+              $("#displayError").addClass('invisible');
+            }, 3000);
           }
         }
       }
