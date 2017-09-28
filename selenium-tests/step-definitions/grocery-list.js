@@ -18,7 +18,7 @@ module.exports = function() {
 
     // Find the input field for list name
     let inputField = await driver.findElement(by.css('#listName'));
-    await sleep(500);
+    await sleep(1000);
 
     // Fill in some text (the name of a list)
     await inputField.sendKeys(listName);
@@ -34,7 +34,7 @@ module.exports = function() {
 
     // Find the input field for list name
     let inputField = await driver.findElement(by.css('#listName'));
-    await sleep(500);
+    await sleep(1000);
 
     // invalid list name
     let listName = ""
@@ -54,11 +54,12 @@ module.exports = function() {
 
     // Find the input field for list name
     let inputField = await driver.findElement(by.css('#listName'));
-    await sleep(500);
+    await sleep(1000);
 
     // duplicate list name
     let listName = "minLista"
     await inputField.sendKeys(listName);
+    await sleep(500);
   });
 
   this.When(/^I click the create button$/, async function() {
@@ -87,11 +88,13 @@ module.exports = function() {
   });
 
   this.Then(/^an error message should be shown stating that I must fill in a name for the list$/, async function() {
-
+    let findError = await driver.findElement(by.css('#displayError'));
+    expect(findError).to.exist;
   });
 
   this.Then(/^an error message should be shown stating that I have already used the name before$/, async function() {
-    
+    let findError = await driver.findElement(by.css('#displayError'));
+    expect(findError).to.exist;
   });
 
 }

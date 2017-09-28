@@ -4,6 +4,8 @@ class AppGui {
 
   constructor() {
     $('.list-detail-view').hide();
+    $('#displayError').hide();
+
 
     // define events
     this.defineMainViewEvents();
@@ -30,14 +32,22 @@ class AppGui {
       // get list name value
       let theListName = $('#listName').val()
 
+      if (theListName === '') {
+        document.getElementById("error-msg").innerHTML = 'Du måste ange ett namn på listan. Försök igen!';
+        $("#displayError").show();
+        setTimeout(function(){
+          $("#displayError").hide();
+        }, 3000);
+      }
+
       // check if there is existing lists
       if (GroceryList.existingLists != undefined) {
         for (let key in GroceryList.existingLists) {
           if (theListName === key) {
             document.getElementById("error-msg").innerHTML = 'Listan finns redan, välj ett annat namn';
-            $("#displayError").removeClass('invisible');
+            $("#displayError").show();
             setTimeout(function(){
-              $("#displayError").addClass('invisible');
+              $("#displayError").hide();
             }, 3000);
           }
         }
