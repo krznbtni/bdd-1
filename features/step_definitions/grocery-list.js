@@ -5,32 +5,29 @@ let GroceryListItem = require('../../grocery-list-item.js');
 
 defineSupportCode(function({Given, When, Then}) {
 
-  let usedListNames = [
-    "list-name-1",
-    "list-name-2",
-    "list-name-3",
-    "list-name-4",
-  ];
-
-  let newList;
-
   Given('that I fill in a valid name for a new grocery list', function () {
+    GroceryList.existingLists = {};
     this.name = 'aaa';
   });
 
   Given('that I do not fill in a valid name for a new grocery list', function () {
+    GroceryList.existingLists = {};
     this.name = '';
   });
 
   Given('that I fill in a valid name for a new grocery list that has already been used', function () {
-    //include tittar ifall den finns i listan. default är true.
+    GroceryList.existingLists = {};
     this.name = 'list-name-1';
-    assert(usedListNames.includes(this.name), 'this name is already used');
+    new GroceryList(this.name);
+    try {
+      this.newList = new GroceryList(this.name);
+    } catch(e){};
   });
 
   When('I click the create button', function () {
-    GroceryList.existingLists = {};
-    this.newList = new GroceryList(this.name);
+    try {
+      this.newList = new GroceryList(this.name);
+    } catch(e){};
   });
 
   Then('a grocery list should be created', function () {
