@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "cucumber": "^3.0.1",
-    "express": "^4.15.4",
+    "express": "^4.18.2",
     "selenium-cucumber-js": "^1.4.9"
   },
   "devDependencies": {
